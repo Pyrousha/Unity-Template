@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1960874119394185385}
   - component: {fileID: 1960874119394185390}
   - component: {fileID: 1960874119842502031}
+  - component: {fileID: 1257007598359246703}
   m_Layer: 6
   m_Name: Player_2D_TopDown
   m_TagString: Untagged
@@ -73,8 +74,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -2068439197
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5661e8e89ee5c254f9155b4a004d777e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -134,9 +135,21 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1960874119394185389}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6a3635b8557d5994f8bc98649452068f, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1257007598359246703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1960874119394185389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de44e8eb115e7cc4dbca1484194f3cd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

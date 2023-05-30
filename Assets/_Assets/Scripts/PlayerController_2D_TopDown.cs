@@ -67,9 +67,15 @@ public class PlayerController_2D_TopDown : Singleton<PlayerController_2D_TopDown
         noGravVelocity.z = 0;
 
         //XZ Friction + acceleration
-        Vector3 currInput = new Vector3(InputHandler.Instance.MoveXZ.x, InputHandler.Instance.MoveXZ.y, 0);
-        if (currInput.magnitude > 1f)
-            currInput.Normalize();
+        Vector3 currInput;
+        if (DialogueUI.Instance.isOpen)
+            currInput = Vector3.zero;
+        else
+        {
+            currInput = new Vector3(InputHandler.Instance.MoveXZ.x, InputHandler.Instance.MoveXZ.y, 0);
+            if (currInput.magnitude > 1f)
+                currInput.Normalize();
+        }
 
         float accelSpeedToUse;
         float frictionSpeedToUse;
