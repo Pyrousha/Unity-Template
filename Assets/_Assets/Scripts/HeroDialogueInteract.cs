@@ -20,7 +20,7 @@ public class HeroDialogueInteract : MonoBehaviour
         }
     }
 
-    internal void AddInteractable(IInteractable dialogueActivator)
+    public void AddInteractable(IInteractable dialogueActivator)
     {
         if (Interactables.Contains(dialogueActivator))
             return;
@@ -30,11 +30,11 @@ public class HeroDialogueInteract : MonoBehaviour
         highestPrioInteractable = Interactables.Peek();
     }
 
-    internal void RemoveInteractable(IInteractable dialogueActivator)
+    public void RemoveInteractable(IInteractable dialogueActivator)
     {
         Interactables.TryRemoveElement(dialogueActivator);
 
-        if(Interactables.Count > 0)
+        if (Interactables.Count > 0)
         {
             highestPrioInteractable = Interactables.Peek();
         }

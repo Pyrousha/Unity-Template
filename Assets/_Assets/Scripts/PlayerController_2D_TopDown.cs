@@ -9,6 +9,10 @@ public class PlayerController_2D_TopDown : Singleton<PlayerController_2D_TopDown
     [SerializeField] private float accelSpeed_ground;
     [SerializeField] private float frictionSpeed_ground;
 
+    [Header("References")]
+    [SerializeField] private Transform interactParentToRotate;
+    private const float velocityRotateCutoff = 1f;
+
     [Header("Ground-Checking and Gravity (No need to touch if not using gravity)")]
     [SerializeField] private bool checkForGrounded = false;
     [SerializeField] private LayerMask groundLayer;
@@ -129,5 +133,11 @@ public class PlayerController_2D_TopDown : Singleton<PlayerController_2D_TopDown
             rb.velocity = updatedVelocity;
         }
         #endregion
+
+        if (rb.velocity.magnitude >= velocityRotateCutoff)
+        {
+            float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x);
+            interactParentToRotate.eulerAngles = new Vector3(0, 0, angle * Mathf.Rad2Deg);
+        }
     }
 }

@@ -35946,16 +35946,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 381327944}
     m_Modifications:
-    - target: {fileID: 1960874119394185385, guid: 132c58823fb7e4e49a340a575b38f8f9,
-        type: 3}
-      propertyPath: accelSpeed_ground
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1960874119394185385, guid: 132c58823fb7e4e49a340a575b38f8f9,
-        type: 3}
-      propertyPath: frictionSpeed_ground
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 1960874119394185388, guid: 132c58823fb7e4e49a340a575b38f8f9,
         type: 3}
       propertyPath: m_RootOrder

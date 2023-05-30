@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Interactable : MonoBehaviour, IInteractable
+/// <summary>
+/// Similar to DialogueActivator, but for arbitrary events instead of dialogue
+/// </summary>
+public class MiscInteractable : MonoBehaviour, IInteractable
 {
     public int Priority { get; set; }
 
@@ -26,7 +29,7 @@ public class Interactable : MonoBehaviour, IInteractable
         }
     }
 
-    public void OnTriggerExit(Collider other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.TryGetComponent(out HeroDialogueInteract player))
         {
@@ -67,13 +70,6 @@ public class Interactable : MonoBehaviour, IInteractable
                     }
             }
         }
-    }
-
-    private void OnPlayOnceConditionPassed()
-    {
-        played = true;
-
-        playOnce = true;
     }
 }
 
