@@ -61,13 +61,13 @@ public class PlayerController_2D_TopDown : Singleton<PlayerController_2D_TopDown
 
         #region Apply Gravity
         if (gravityStrength > 0)
-            rb.velocity -= new Vector3(0, gravityStrength, 0);
+            rb.linearVelocity -= new Vector3(0, gravityStrength, 0);
         #endregion
 
 
         #region Acceleration
         //Get gravityless velocity
-        Vector3 noGravVelocity = rb.velocity;
+        Vector3 noGravVelocity = rb.linearVelocity;
         noGravVelocity.z = 0;
 
         //XZ Friction + acceleration
@@ -129,14 +129,14 @@ public class PlayerController_2D_TopDown : Singleton<PlayerController_2D_TopDown
             }
 
             //Apply velocity
-            updatedVelocity.z = rb.velocity.z;
-            rb.velocity = updatedVelocity;
+            updatedVelocity.z = rb.linearVelocity.z;
+            rb.linearVelocity = updatedVelocity;
         }
         #endregion
 
-        if (rb.velocity.magnitude >= velocityRotateCutoff)
+        if (rb.linearVelocity.magnitude >= velocityRotateCutoff)
         {
-            float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x);
+            float angle = Mathf.Atan2(rb.linearVelocity.y, rb.linearVelocity.x);
             interactParentToRotate.eulerAngles = new Vector3(0, 0, angle * Mathf.Rad2Deg);
         }
     }
