@@ -1,36 +1,17 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
 {
-    [SerializeField] Animator howToPlayPopup;
+    [SerializeField] private Button playButton;
 
-    private static string ANIM_PARAM_STATUS = "Status";
-
-    public void Start()
+    private void Awake()
     {
-        howToPlayPopup.SetBool(ANIM_PARAM_STATUS, false);
-    }
-
-    public void Update()
-    {
-        if (Input.anyKey)
-        {
-            howToPlayPopup.SetBool(ANIM_PARAM_STATUS, false);
-        }
+        playButton.onClick.AddListener(OnPlayButtonClicked);
     }
 
     public void OnPlayButtonClicked()
     {
         SceneTransitioner.Instance.LoadSceneWithIndex(SceneTransitioner.GAMEPLAY_INDEX);
-    }
-
-    public void OnHowToPlayClicked()
-    {
-        howToPlayPopup.SetBool(ANIM_PARAM_STATUS, true);
-    }
-
-    public void OnHowToPlayDismissed()
-    {
-        howToPlayPopup.SetBool(ANIM_PARAM_STATUS, false);
     }
 }
