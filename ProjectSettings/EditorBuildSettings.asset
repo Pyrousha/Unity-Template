@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/_Assets/Scenes/MainMenu.unity
     guid: 39e7b1d39f262ea4e811ebdb82330dc8
   - enabled: 1
+    path: Assets/_Assets/Scenes/BaseScene_2D_Sidescroller.unity
+    guid: 79bfee58cfc4fe84e9858c6c92013ad8
+  - enabled: 1
     path: Assets/_Assets/Scenes/BaseScene_2D_TopDown.unity
     guid: dd8bbb03a1dc414428d04fd349c6d16b
   m_configObjects: {}
